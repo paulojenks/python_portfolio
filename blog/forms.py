@@ -1,6 +1,5 @@
 from django import forms
 from tinymce import TinyMCE
-from django.forms import modelformset_factory
 
 from . import models
 

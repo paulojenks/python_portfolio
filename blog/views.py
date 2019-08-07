@@ -1,14 +1,12 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 from django.views.generic.edit import UpdateView, CreateView
-
 from slugify import slugify
 
-from . import models
 from . import forms
+from . import models
 
 
 class BlogCreateView(CreateView):
@@ -48,4 +46,3 @@ class BlogDetailView(TemplateView):
         context['blogs'] = models.Entry.objects.all()
         context['blog'] = models.Entry.objects.get(slug=kwargs['slug'])
         return context
-

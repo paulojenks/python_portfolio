@@ -16,6 +16,7 @@ html, body {
     width: 1000px;
     padding: 20px;
 }
+
 .display img {
     width: 1000px;
 }
@@ -27,7 +28,7 @@ html, body {
 
 .nav-menu-container {
     width: 1000px;
-	margin:auto;
+    margin: auto;
 }
 
 .nav-menu {
@@ -46,20 +47,20 @@ html, body {
     width: 200px;
 }
 
-.left-arrow{
-	width: auto;
-	height:197px;
-	display:block;
-	margin-right:10px;
-	float:left;
+.left-arrow {
+    width: auto;
+    height: 197px;
+    display: block;
+    margin-right: 10px;
+    float: left;
 }
 
-.right-arrow{
-	width: auto;
-	height:200px;
-	display:block;
-	margin-left:10px;
-	float:right;
+.right-arrow {
+    width: auto;
+    height: 200px;
+    display: block;
+    margin-left: 10px;
+    float: right;
 }
 
 .right-arrow a img {
@@ -68,6 +69,7 @@ html, body {
     opacity: .5;
     border-radius: 0 100% 100% 0;
 }
+
 .left-arrow a img {
     height: 200px;
     border: 0;
@@ -84,7 +86,7 @@ html, body {
     grid-template-columns: 1fr 1fr;
 }
 
-#logo a{
+#logo a {
     text-align: left;
     text-decoration: none;
     color: white;
@@ -95,10 +97,10 @@ html, body {
 }
 
 .avatar {
-  vertical-align: middle;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
 }
 
 .profile-container {
@@ -125,10 +127,11 @@ html, body {
     margin: 0;
 }
 
-#social-media img{
+#social-media img {
     height: 35px;
     border-radius: 4px;
 }
+
 .blog-form {
     width: 900px;
     margin: auto;

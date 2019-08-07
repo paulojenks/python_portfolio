@@ -2,19 +2,19 @@
 <head>
 
 
-{% block title %}Blog | NEW{% endblock %}
+    {% block title %}Blog | NEW{% endblock %}
 
-{% block content %}
+    {% block content %}
 
-    <div class="blog-form">
+        <div class="blog-form">
 
-    <form method="POST" action="">
-        <h1>New Blog Post</h1>
-        {% csrf_token %}
-        {{ form.media }}
-        <p>{{ form.title.label }}: {{ form.title }}</p>
-        <p>{{ form.content }}</p>
-    <input type="submit" value="submit" class="blog-form-button">
-    </form>
-    </div>
-{% endblock %}
+            <form method="POST" action="">
+                <h1>New Blog Post</h1>
+                {% csrf_token %}
+                {{ form.media }}
+                <p>{{ form.title.label }}: {{ form.title }}</p>
+                <p>{{ form.content }}</p>
+                <input type="submit" value="submit" class="blog-form-button">
+            </form>
+        </div>
+    {% endblock %}

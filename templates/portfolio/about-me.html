@@ -7,14 +7,18 @@
 {% block content %}
     <div class="profile-container">
         <h1>Meet {{ profile.first_name }}</h1>
-        <img class="avatar" src="{% static 'images'  %}/{{ profile.avatar.url }}">
+        <img class="avatar" src="{% static 'images' %}/{{ profile.avatar.url }}">
         <p>{{ profile.personal_bio }}</p>
         <p>{{ profile.professional_bio }}</p>
-    <div id="social-media">
-        <a href="https://www.twitter.com/jnkn315" target="_blank"><img src="{% static 'images/icons/Twitter_Logo_Blue.png' %}"></a>
-        <a href="https://www.github.com/paulojenks" target="_blank"><img src="{% static 'images/icons/Git-Icon-Black.png' %}"></a>
-        <a href="https://www.linkedin.com/in/paul-jenkins-48882670/" target="_blank"><img src="{% static 'images/icons/LI-In-Bug.png' %}"></a>
-        <a href="https://www.facebook.com" target="_blank"><img src="{% static 'images/icons/f_logo_RGB-Blue_250.png' %}"></a>
-    </div>
+        <div id="social-media">
+            <a href="https://www.twitter.com/jnkn315" target="_blank"><img
+                    src="{% static 'images/icons/Twitter_Logo_Blue.png' %}"></a>
+            <a href="https://www.github.com/paulojenks" target="_blank"><img
+                    src="{% static 'images/icons/Git-Icon-Black.png' %}"></a>
+            <a href="https://www.linkedin.com/in/paul-jenkins-48882670/" target="_blank"><img
+                    src="{% static 'images/icons/LI-In-Bug.png' %}"></a>
+            <a href="https://www.facebook.com" target="_blank"><img
+                    src="{% static 'images/icons/f_logo_RGB-Blue_250.png' %}"></a>
+        </div>
     </div>
 {% endblock %}

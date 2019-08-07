@@ -43,11 +43,11 @@
 </head>
 <body>
 <div id="background" style="background-image: url('{% static 'images/mooning.png' %}')">
-<div id="top-bar">
-    <div id="logo"><p><a href="{% url 'portfolio:home' %}">Official Site of Paul Jenkins</a></p></div>
-    <div id="tools"><p>Sign-in</p></div>
-</div>
-{% block content %}{% endblock %}
+    <div id="top-bar">
+        <div id="logo"><p><a href="{% url 'portfolio:home' %}">Official Site of Paul Jenkins</a></p></div>
+        <div id="tools"><p>Sign-in</p></div>
+    </div>
+    {% block content %}{% endblock %}
 </div>
 </body>
 </html>

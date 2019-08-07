@@ -4,15 +4,15 @@
 
 {% block content %}
     <div class="display-wrapper">
-    <div class="blog-entry">
-        <div id="blog-entry-header">
-            <h1>{{ project.name }}</h1>
-            <p>{{ project.type }}</p>
-            <p><em>GitHub: <a href="{{ project.git_link }}">{{ project.git_link }}</a></em></p>
+        <div class="blog-entry">
+            <div id="blog-entry-header">
+                <h1>{{ project.name }}</h1>
+                <p>{{ project.type }}</p>
+                <p><em>GitHub: <a href="{{ project.git_link }}">{{ project.git_link }}</a></em></p>
+            </div>
+            <div id="blog-entry-content">
+                <p>{{ project.description|safe }}</p>
+            </div>
         </div>
-        <div id="blog-entry-content">
-            <p>{{ project.description|safe }}</p>
-        </div>
-    </div>
     </div>
 {% endblock %}

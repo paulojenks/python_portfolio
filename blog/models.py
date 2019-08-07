@@ -12,6 +12,3 @@ class Entry(models.Model):
     class Meta:
         verbose_name_plural = "entries"
         ordering = ['date_published']
-
-
-
