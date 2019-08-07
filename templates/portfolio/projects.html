@@ -14,27 +14,26 @@
             let div = $('div.nav-menu');
             //find ul width
             let liNum = $(div).find('img').length;
-            let speed = 1000;
-            let containerWidth = 848;
+            let speed = 500;
+            let containerWidth = 600;
             let itemWidth = 212;
             //Remove scrollbars
-            if (liNum < 4) {
-                console.log($('#arrows').attr("src"));
+            if (liNum < 3) {
                 $('#left-arrows').attr("src", "");
                 $('#right-arrows').attr("src", "");
             }
             $(div).css({overflow: 'hidden'});
             $('div.right-arrow').click(function (e) {
-                if (($(div).scrollLeft() + containerWidth) < (liNum * itemWidth)) {
+                if (($(div).scrollLeft() + itemWidth) < (liNum * itemWidth)) {
                     $(div).animate({
-                        scrollLeft: '+=' + containerWidth
+                        scrollLeft: '+=' + itemWidth
                     }, speed);
                 }
             });
             $('div.left-arrow').click(function (e) {
                 if (($(div).scrollLeft() + containerWidth) > containerWidth) {
                     $(div).animate({
-                        scrollLeft: '-=' + containerWidth
+                        scrollLeft: '-=' + itemWidth
                     }, speed);
                 }
             });

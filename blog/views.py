@@ -36,6 +36,11 @@ class BlogListView(TemplateView):
     model = models.Entry
     template_name = "blog/blog_home.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['blogs'] = models.Entry.objects.all()
+        return context
+
 
 class BlogDetailView(TemplateView):
     model = models.Entry

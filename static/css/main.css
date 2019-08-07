@@ -4,6 +4,7 @@ html, body {
 }
 
 #background {
+    min-height: 750px;
     background-color: #080013;
 }
 
@@ -27,7 +28,7 @@ html, body {
 }
 
 .nav-menu-container {
-    width: 1000px;
+    width: 600px;
     margin: auto;
 }
 
@@ -35,7 +36,7 @@ html, body {
     /*padding: 20px;*/
     white-space: nowrap;
     overflow: auto;
-    width: 880px;
+    width: 475px;
     height: 200px;
     margin: auto;
     float: left;
@@ -98,9 +99,10 @@ html, body {
 
 .avatar {
     vertical-align: middle;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
+    padding: 10px;
 }
 
 .profile-container {
@@ -108,14 +110,21 @@ html, body {
     margin: auto;
     background-color: white;
     padding: 20px;
-    height: 900px;
+    min-height: 500px;
+    border-bottom: 1px solid black;
+}
+
+.avatar-social {
+    width: 200px;
+    float: left;
+    display: block;
+    text-align: center;
 }
 
 #social-media {
     border: 1px solid grey;
     width: 180px;
     border-radius: 4px;
-    padding: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 5px;
@@ -130,6 +139,19 @@ html, body {
 #social-media img {
     height: 35px;
     border-radius: 4px;
+}
+
+.bio-container {
+    width: 750px;
+    float: right;
+}
+
+.bio-container h4 {
+    margin-top: 0;
+}
+
+.bio-container p{
+    margin-top: 0;
 }
 
 .blog-form {
@@ -173,6 +195,7 @@ html, body {
 }
 
 .blog-entry {
+    min-height: 300px;
     width: 900px;
     margin-left: auto;
     margin-right: auto;

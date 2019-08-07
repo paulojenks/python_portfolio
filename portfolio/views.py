@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.shortcuts import render
 from django.views.generic import TemplateView
 
-# Create your views here.
+
 from . import models
 
 
@@ -39,3 +38,6 @@ class ProjectDetailView(TemplateView):
         context['project'] = models.Project.objects.get(pk=kwargs['pk'])
         context['projects'] = models.Project.objects.all()
         return context
+
+
+
