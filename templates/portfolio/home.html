@@ -1,0 +1,87 @@
+{% extends 'portfolio/layout.html' %}
+{% load static from staticfiles %}
+{% static "" as baseURL %}
+
+{% block title %}Paul Jenkins{% endblock %}
+{% block content %}
+    <div class="display-wrapper" >
+        <div class="display">
+            <a href="{% url 'portfolio:project' pk=2 %}"><img class="display-img" src="{% static 'images/python-lg.JPG' %}"></a>
+            <img class="display-img" src="{% static 'images/contact-lg.JPG' %}">
+            <a href="{% url 'portfolio:profile' %}"><img class="display-img" src="{% static 'images/about-me-lg.JPG' %}"></a>
+            <a href="{% url 'blog:blog-home' %}"><img class="display-img" src="{% static 'images/blog-lg.JPG' %}"></a>
+        </div>
+    </div>
+    <div class="nav-wrapper">
+    <div class="nav-menu-container">
+        <div class="left-arrow">
+            <a href="#prev">
+                <img src="{% static 'images/left-arrow.jpg' %}">
+            </a>
+        </div>
+        <div class="nav-menu">
+            <img class="nav-menu-item" id="python" src="{% static 'images/python.jpg' %}"
+                 onmouseover="onHover();"
+                 onmouseout="offHover();"
+                 onclick="currentDiv(1)">
+            <img class="nav-menu-item" id="contact" src="{% static 'images/contact.JPG' %}"
+                 onclick="currentDiv(2)"
+                 onmouseover="onHover();"
+                 onmouseout="offHover();">
+            <img class="nav-menu-item" id="about-me" src="{% static 'images/about-me.JPG' %}"
+                 onclick="currentDiv(3)"
+                 onmouseover="onHover();"
+                 onmouseout="offHover();">
+            <img class="nav-menu-item" id="blog" src="{% static 'images/blog.JPG' %}" onclick="currentDiv(4)"
+                 onmouseover="onHover();"
+                 onmouseout="offHover();">
+        </div>
+        <div class="right-arrow">
+            <a href="#next">
+                <img src="{% static 'images/right-arrow.jpg' %}">
+            </a>
+        </div>
+    </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showDivs(slideIndex);
+
+        function onHover() {
+            let srcId = event.srcElement.id;
+            let locId = "images/" + srcId + "-white.jpg";
+            $("#" + srcId).attr('src', '{{ baseURL }}' + locId);
+        }
+
+        function offHover() {
+            let srcId = event.srcElement.id;
+            let locId = "images/" + srcId + ".jpg";
+            $("#" + srcId).attr('src', '{{ baseURL }}' + locId);
+        }
+
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            let i;
+            let x = document.getElementsByClassName("display-img");
+            let dots = document.getElementsByClassName("nav-menu-item");
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-opacity-off";
+        }
+    </script>
+{% endblock %}

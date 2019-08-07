@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static from staticfiles %}
+{% static "" as baseURL %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="text/javascript" href="{% static '/js/main.js' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>{% block title %}{% endblock %}</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //find div
+            let div = $('div.nav-menu');
+            //find ul width
+            let liNum = $(div).find('img').length;
+            let speed = 1000;
+            let containerWidth = 848;
+            let itemWidth = 212;
+            //Remove scrollbars
+            if (liNum < 4) {
+                console.log($('#arrows').attr("src"));
+                $('#left-arrows').attr("src", "");
+                $('#right-arrows').attr("src", "");
+            }
+            $(div).css({overflow: 'hidden'});
+            $('div.right-arrow').click(function (e) {
+                if (($(div).scrollLeft() + containerWidth) < (liNum * itemWidth)) {
+                    $(div).animate({
+                        scrollLeft: '+=' + containerWidth
+                    }, speed);
+                }
+            });
+            $('div.left-arrow').click(function (e) {
+                if (($(div).scrollLeft() + containerWidth) > containerWidth) {
+                    $(div).animate({
+                        scrollLeft: '-=' + containerWidth
+                    }, speed);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="background" style="background-image: url('{% static 'images/mooning.png' %}')">
+<div id="top-bar">
+    <div id="logo"><p><a href="{% url 'portfolio:home' %}">Official Site of Paul Jenkins</a></p></div>
+    <div id="tools"><p>Sign-in</p></div>
+</div>
+{% block content %}{% endblock %}
+</div>
+</body>
+</html>
