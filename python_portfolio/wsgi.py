@@ -1,5 +1,5 @@
 """
-WSGI config for portfolio_game project.
+WSGI config for python_portfolio project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'portfolio_game.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'python_portfolio.settings')
 
 application = get_wsgi_application()

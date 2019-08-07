@@ -1,4 +1,4 @@
-#!C:\Users\pnjen\Desktop\portfolio_game\Scripts\python.exe
+#!C:\Users\pnjen\Desktop\python_portfolio\Scripts\python.exe
 # EASY-INSTALL-ENTRY-SCRIPT: 'python-slugify==3.0.3','console_scripts','slugify'
 __requires__ = 'python-slugify==3.0.3'
 import re
