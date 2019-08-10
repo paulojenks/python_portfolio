@@ -15,10 +15,7 @@
                 {% for item in blogs %}
                     <a href="{% url 'blog:blog-detail' slug=item.slug %}">
                         <img class="nav-menu-item" id="{{ item.slug }}"
-                             src="{% static 'images' %}/{{ item.slug }}.jpg"
-                             onmouseover="onHover();"
-                             onmouseout="offHover();"
-                             onclick="currentDiv({{ item.id }})"></a>
+                             src="{% static 'images' %}/{{ item.slug }}.jpg"></a>
                 {% endfor %}
             </div>
             <div class="right-arrow">

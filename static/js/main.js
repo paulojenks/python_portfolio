@@ -30,20 +30,6 @@ $(document).ready(function () {
     let slideIndex = 1;
     showDivs(slideIndex);
 
-    $('.nav-menu-item').mouseenter(onHover()).mouseleave(offHover());
-    function onHover() {
-        let srcId = event.srcElement.id;
-        let locId = "images/" + srcId + "-white.jpg";
-        $("#" + srcId).attr('src', '{{ baseURL }}' + locId);
-    }
-
-    function offHover() {
-        let srcId = event.srcElement.id;
-        let locId = "images/" + srcId + ".jpg";
-        $("#" + srcId).attr('src', '{{ baseURL }}' + locId);
-    }
-
-
     function currentDiv(n) {
         showDivs(slideIndex = n);
     }

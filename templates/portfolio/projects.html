@@ -14,11 +14,8 @@
 
                 {% for project in projects %}
                     <a href="{% url 'portfolio:project' pk=project.id %}">
-                        <img class="nav-menu-item" id="{{ project.id }}"
-                             src="{% static 'images' %}/{{ project.image.url }}"
-                             onmouseover="onHover();"
-                             onmouseout="offHover();"
-                             onclick="currentDiv({{ item.id }})">
+                        <img class="nav-menu-item" id="{{ project.name }}"
+                             src="{% static 'images/' %}{{ project.image.url }}">
                     </a>
                 {% endfor %}
             </div>
