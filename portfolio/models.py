@@ -12,7 +12,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=44)
     personal_bio = models.TextField()
     professional_bio = models.TextField()
-    avatar = models.FileField(upload_to="avatars")
+    avatar = models.FileField(upload_to="avatars", null=True)
 
     def __str__(self):
         return self.username

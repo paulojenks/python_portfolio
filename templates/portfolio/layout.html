@@ -1,50 +1,60 @@
 <!DOCTYPE html>
-{% load static from staticfiles %}
+{% load static %}
 {% static "" as baseURL %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/css/main.css' %}">
     <link rel="text/javascript" href="{% static '/js/main.js' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>{% block title %}{% endblock %}</title>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            //find div
-            let div = $('div.nav-menu');
-            //find ul width
-            let liNum = $(div).find('img').length;
-            let speed = 500;
-            let containerWidth = 600;
-            let itemWidth = 212;
-            //Remove scrollbars
-            if (liNum < 3) {
-                $('#left-arrows').attr("src", "");
-                $('#right-arrows').attr("src", "");
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+
+        function onHover() {
+            let srcId = event.srcElement.id;
+            let locId = "images/" + srcId + "-white.jpg";
+            $("#" + srcId).attr('src', '{{ baseURL }}' + locId);
+        }
+
+        function offHover() {
+            let srcId = event.srcElement.id;
+            let locId = "images/" + srcId + ".jpg";
+            $("#" + srcId).attr('src', '{{ baseURL }}' + locId);
+        }
+
+        function currentDiv(n) {
+        showDivs(slideIndex = n);
+    }
+        let slideIndex = 1;
+        showDivs(slideIndex);
+
+        function showDivs(n) {
+            let i;
+            let x = document.getElementsByClassName("display-img");
+            let dots = document.getElementsByClassName("nav-menu-item");
+            if (n > x.length) {
+                slideIndex = 1
             }
-            $(div).css({overflow: 'hidden'});
-            $('div.right-arrow').click(function (e) {
-                if (($(div).scrollLeft() + itemWidth) < (liNum * itemWidth)) {
-                    $(div).animate({
-                        scrollLeft: '+=' + itemWidth
-                    }, speed);
-                }
-            });
-            $('div.left-arrow').click(function (e) {
-                if (($(div).scrollLeft() + containerWidth) > containerWidth) {
-                    $(div).animate({
-                        scrollLeft: '-=' + itemWidth
-                    }, speed);
-                }
-            });
-        });
+            if (n < 1) {
+                slideIndex = x.length
+            }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-opacity-off";
+        }
     </script>
 </head>
 <body>
 <div id="background" style="background-image: url('{% static 'images/mooning.png' %}')">
     <div id="top-bar">
-        <div id="logo"><p><a href="{% url 'portfolio:home' %}">Official Site of Paul Jenkins</a></p></div>
-        <div id="tools"><p>Sign-in</p></div>
+        <div id="logo"><p><a href="{% url 'portfolio:home' %}"><img src="{% static 'images/icons/home.jpg' %}" >  | Official Site of Paul Jenkins</a></p></div>
     </div>
     {% block content %}{% endblock %}
 </div>

@@ -12,3 +12,6 @@ class Entry(models.Model):
     class Meta:
         verbose_name_plural = "entries"
         ordering = ['date_published']
+
+    def __unicode__(self):
+        return self.title

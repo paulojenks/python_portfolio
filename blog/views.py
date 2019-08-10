@@ -9,6 +9,7 @@ from . import forms
 from . import models
 
 
+# Blog form for easily creating blog by authorized user
 class BlogCreateView(CreateView):
     model = models.Entry
     template_name = "blog/blog_new.html"
@@ -27,11 +28,13 @@ class BlogCreateView(CreateView):
         return render(request, 'blog/blog_new.html', {'form': form})
 
 
+# Blog edit page
 class BlogUpdateView(UpdateView):
     model = models.Entry
     template_name = "blog/blog_new.html"
 
 
+# Blog Home page, blogs context for navigation menu
 class BlogListView(TemplateView):
     model = models.Entry
     template_name = "blog/blog_home.html"
@@ -42,6 +45,7 @@ class BlogListView(TemplateView):
         return context
 
 
+# Blog matches slug- Details for that blog, blogs used for navigation menu
 class BlogDetailView(TemplateView):
     model = models.Entry
     template_name = "blog/blog_detail.html"
