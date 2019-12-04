@@ -1,4 +1,4 @@
-Django==2.2.4
+Django==2.2.8
 django-debug-toolbar==1.9.1
 django-nose==1.4.6
 django-tinymce4-lite==1.7.5
